@@ -1,5 +1,6 @@
 python python_process.py
 
+#hadoop fs -rm -r /home/training/Desktop/loganalysis/hdfsdata
 #hadoop fs -rm -r /home/training/Desktop/loganalysis/queryoutput1
 #hadoop fs -rm -r /home/training/Desktop/loganalysis/queryoutput2
 
