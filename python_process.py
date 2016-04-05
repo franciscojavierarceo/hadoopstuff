@@ -8,9 +8,6 @@ def main():
 	f = open('server-logs','rb')
 	f2= open('server-logs-mod.txt','w')
 	data = f.readlines()
-	out = []
-	orig = []
-	lenv =[]
 	c=0
 	for row in data:
 		row = row.replace('|', '')
