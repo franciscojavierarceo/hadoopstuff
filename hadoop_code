@@ -1,0 +1,10 @@
+hadoop fs -put /home/training/Desktop/loganalysis/server-logs-mod.txt /home/training/Desktop/loganalysis/hdfsdata
+
+hadoop fs -rm -r /home/training/Desktop/loganalysis/output
+
+hadoop jar /usr/lib/hadoop-0.20-mapreduce/contrib/streaming/hadoop-streaming-2.0.0-mr1-cdh4.1.1.jar -mapper mapper1.py -reducer reducer1.py -input /home/training/Desktop/loganalysis/hdfsdata -output /home/training/Desktop/loganalysis/output -file mapper1.py -file reducer1.py 
+
+python /home/training/Desktop/loganalysis/python_process 
+>>'server-logs-mod.txt'
+
+hadoop fs -text /home/training/Desktop/loganalysis/output/part*
