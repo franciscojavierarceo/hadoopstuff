@@ -19,11 +19,11 @@ hive -e 'create table nasa (src string,
 
 hive -e 'load data local inpath "/home/training/Desktop/loganalysis/server-logs-mod.txt" into table nasa'
 
-hive -e "SELECT COUNT(*) AS NROWS FROM (SELECT SPLIT(ts, '/')[1] as month from nasa where statcode==200 ) df where month ='Aug';"
+hive -e "SELECT COUNT(*) AS NROWS FROM (SELECT SPLIT(ts, '/')[1] as month from nasa where statcode==200 ) df where month ='Aug';" >> hiveq1.txt
 
-hive -e "SELECT COUNT(distinct src) AS NROWS FROM (SELECT src, SPLIT(ts, '/')[1] as month from nasa) df where month ='Sept';"
+hive -e "SELECT COUNT(distinct src) AS NROWS FROM (SELECT src, SPLIT(ts, '/')[1] as month from nasa) df where month ='Sept';" >> hiveq2.txt
 
-hive -e "SELECT url, count(*) s nrows FROM  nasa where split(ts,'/')[2]='1995' group by url order by nrows desc limit 1 "
+hive -e "SELECT url, count(*) as nrows FROM nasa where split(ts,'/')[2]='1995' group by url order by nrows desc limit 1 " >> hiveq3.txt
 
 hive -e "select day, count(*) as nrows from (SELECT split(ts, '/')[0] as day, split(ts,'/')[1] as month, split(ts,'/')[2] as year from nasa) df where month='Oct' and year='1995' group by day, month, year;" >> plotdata.txt
 
