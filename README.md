@@ -1,10 +1,14 @@
 # Hadoop homework for COMSW4121
 
+Author: Francisco Javier Arceo
+Contact: fja2114@columbia.edu
+Date: April 5th 2016
+
 The script can be completely run by executing the following line in the folder:
 
 	source ./hadoop_script.sh
 
-The bash script runs a python file to process the log data that can be uploaded into hive.
+The bash script runs a python file (python_process.py) to process the log data that can be uploaded into hive.
 
 
 Part a: Hive
@@ -36,4 +40,4 @@ Part b: MapReduce
 
 
 2. Input Code/files: mapper2.py and reducer2.py 		Output files: query2hadoop.txt
-	> Jul 77391946982	
+	> Jul 77391946982
